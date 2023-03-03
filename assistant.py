@@ -48,7 +48,7 @@ def display_chat_history(starting_conversation):
     for i, text in enumerate(st.session_state['conversation']['text']):
         chat_so_far += text + '\n'
         if i < len(starting_conversation): continue
-        if text[:4] == 'User: ' + unsafe_allow_html=True
+        if text[:4] == 'User: '
             text = text[:-13]
             
         else:
