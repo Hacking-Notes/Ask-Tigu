@@ -48,7 +48,7 @@ def display_chat_history(starting_conversation):
     for i, text in enumerate(st.session_state['conversation']['text']):
         chat_so_far += text + '\n'
         if i < len(starting_conversation): continue
-        if text[:4] == '<img src="https://play.staratlas.com/_next/image/?url=https%3A%2F%2Fstorage.googleapis.com%2Fstar-atlas-assets%2Favatars%2FMUD_D.jpg&w=256&q=75" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;"> User: ' + unsafe_allow_html=True
+        if text[:4] == 'User: ' + unsafe_allow_html=True
             text = text[:-13]
             
         else:
