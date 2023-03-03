@@ -33,6 +33,21 @@ with tab1:
     response = st.container()
     chat = st.container()
 
+# Google search section
+with search:
+    with st.form('Google'):
+        user_query_text = st.text_input(label='Google search',value=initial_search, help="This tab \
+            allows you to give information from across the internet to the Assistant AI. Once you've \
+                told it all the topics to search for, you can have a conversation with it in the \
+                    'Have a conversation' tab.")
+        google_submitted = st.form_submit_button("Submit")
+
+        # If the user pressed submit to make a new search or selected an existing one from history
+        if (google_submitted and user_query_text != '') or initial_search != '':
+            google_findings, links = make_new_internet_search(user_query_text)
+            
+            display_search_results(user_query_text, google_findings, links)
+    
 # Section where user inputs directly to GPT
 with chat:
     with st.form('Chat'):
