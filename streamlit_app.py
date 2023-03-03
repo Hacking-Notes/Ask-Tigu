@@ -60,7 +60,7 @@ add_vertical_space(4)
 col1, col2, col3 = st.columns(3)
 with col1:
     url = 'https://play.staratlas.com/market/?oid=3&affid=141'
-if st.button('Star Atlas Market Place', key='Market Place'):
+if st.button('🛒 - Star Atlas Market Place', key='Market Place'):
     st.markdown(f'<a href="{url}" target="_blank">Link</a>', unsafe_allow_html=True)
 with col2:
     st.container()
