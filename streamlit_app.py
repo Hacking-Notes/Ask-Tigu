@@ -12,7 +12,7 @@ from gpt_api import find_top_similar_results
 from auth import authenticate_user, logout_button
 from database import delete_user_button
 
-st.set_page_config(page_title='Star Atlas FAQ')
+st.set_page_config(page_title='Star Atlas FAQ', page_icon='https://uploads-ssl.webflow.com/62be08691fcd4115d816102e/62c205c7c46ace81f5f64ba8_11212.jpg'))
 st.title("Star Atlas FAQ")
 st.markdown('Introducing our webpage featuring a ChatGPT-powered chatbot for quick and accurate responses to FAQs.  \
     With a user-friendly interface, simply type in your question and get an instant response. \
