@@ -61,7 +61,6 @@ col1, col2, col3 = st.columns(3)
 with col1:
     buy_me_a_coffee.button('farrael004', floating=False)
 with col2:
-    st.markdown("By [Hacking Notes](https://github.com/Hacking-Notes/FAQ)")
-    badge(type="github", name="Hacking-Notes/FAQ")
+    st.container()
 with col3:
     st.container()
