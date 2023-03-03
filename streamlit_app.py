@@ -114,10 +114,11 @@ st.markdown('<style>#tabs-bui3-tab-2 {visibility:hidden;display:none;}</style>',
 st.markdown('<style>#tabs-bui3-tab-3 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
 st.markdown('<style>.css-18ni7ap e8zbici2 {display: none;}</style>', unsafe_allow_html=True)
 
-hide_streamlit_style = """
+hide_st_style = """
             <style>
             #MainMenu {visibility: hidden;}
-            #footer {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
             </style>
             """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+st.markdown(hide_st_style, unsafe_allow_html=True)
