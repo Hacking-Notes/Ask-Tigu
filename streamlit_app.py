@@ -59,7 +59,9 @@ add_vertical_space(4)
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    buy_me_a_coffee.button('farrael004', floating=False)
+    url = 'https://www.example.com'
+if st.button('Go to example.com', key='example'):
+    st.markdown(f'<a href="{url}" target="_blank">Link</a>', unsafe_allow_html=True)
 with col2:
     st.container()
 with col3:
