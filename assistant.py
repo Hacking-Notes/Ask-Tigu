@@ -49,7 +49,7 @@ def display_chat_history(starting_conversation):
         chat_so_far += text + '\n'
         if i < len(starting_conversation): continue
         if text[:4] == 'User':
-            text = 'User:' text[:-13]
+            text = '👤' + text[:-13]
             
         else:
             text = '🖥️' + markdown_litteral(text[:-13])
