@@ -49,7 +49,7 @@ def display_chat_history(starting_conversation):
         chat_so_far += text + '\n'
         if i < len(starting_conversation): continue
         if text[:4] == 'User':
-            text = '<img src="https://play.staratlas.com/_next/image/?url=https%3A%2F%2Fstorage.googleapis.com%2Fstar-atlas-assets%2Favatars%2FMUD_D.jpg&w=256&q=75" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;">' + text[:-13]
+            text = '<img src="https://play.staratlas.com/_next/image/?url=https%3A%2F%2Fstorage.googleapis.com%2Fstar-atlas-assets%2Favatars%2FMUD_D.jpg&w=256&q=75" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;">' + text[:-13], unsafe_allow_html=True
             
         else:
             text = '🖥️' + markdown_litteral(text[:-13])
