@@ -112,4 +112,3 @@ st.markdown('<style>.row-widget.stCheckbox{visibility:hidden;display:none;}</sty
 st.markdown('<style>#tabs-bui3-tab-1 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
 st.markdown('<style>#tabs-bui3-tab-2 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
 st.markdown('<style>#tabs-bui3-tab-3 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
-st.markdown('<style>.css-1fcdlhc.e1s6o5jp0 {display:none !important;}</style>', unsafe_allow_html=True)
