@@ -98,9 +98,7 @@ add_vertical_space(2)
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    url = "https://play.staratlas.com/market/?oid=3&affid=141"
-    if st.button('🛒 ---> Star Atlas Market Place'):
-        st.link(url, target="_blank")
+    st.button('[🛒 ---> Star Atlas Market Place](https://play.staratlas.com/market/?oid=3&affid=141)')
 with col2:
     st.container()
 with col3:
