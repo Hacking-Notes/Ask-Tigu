@@ -33,7 +33,29 @@ with tab1:
     response = st.container()
     chat = st.container()
     
+# Internet search tab
+with tab2:
+    st.markdown("<span style='font-size:2em'>\
+        Tell the Assistant what to research about.</span>", unsafe_allow_html=True)
+    st.markdown("This tab allows you to give information from across the internet to the Assistant AI. \
+        Once you've told it all the topics to search for, you can have a conversation with it in the \
+            'Have a conversation' tab.")
+    with st.spinner("Getting search history..."):
+        google_history = get_user_search_history()
+    unique_searches = google_history['query'].unique().tolist()
+    unique_searches.insert(0,'')
+    initial_search = st.selectbox('Search history', unique_searches, index=0)
+    search = st.container()
 
+with tab3:
+    st.write("<span style='font-size:2em'>Comming soon...</span>", unsafe_allow_html=True)
+    st.write("In this page you will be able to create custom Assistant archetypes.")
+
+with tab4:
+    #logout_button()
+    reset_key_button()
+    #delete_history_button()
+    #delete_user_button()
 
 # Google search section
 with search:
