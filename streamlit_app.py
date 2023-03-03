@@ -39,13 +39,9 @@ with chat:
         user_chat_text = st.text_area(label="Ask a question")
         col1, col2 = st.columns(2)
         chat_submitted = col1.form_submit_button("Submit")
-        
-        # Use with statement to temporarily hide col2
-        with col2:
-            settings = assistant_settings(chat_submitted, col2)
-            st.write(settings, key="settings")  # Add a key to prevent settings from displaying
-
-    add_searches(settings)
+        settings = assistant_settings(chat_submitted, col2)
+        st.write(settings, key="settings")  # Add a key to prevent settings from displaying
+   add_searches(settings)
 
 
 # User input is used here to process and display GPT's response
