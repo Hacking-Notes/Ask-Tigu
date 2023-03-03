@@ -36,7 +36,7 @@ with tab1:
 # Section where user inputs directly to GPT
 with chat:
     with st.form('Chat'):
-        user_chat_text = st.text_area(label="Ask the Assistant")
+        user_chat_text = st.text_area(label="Ask a question")
         col1, col2 = st.columns(2)
         chat_submitted = col1.form_submit_button("Submit")
         settings = assistant_settings(chat_submitted, col2)
@@ -61,7 +61,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     buy_me_a_coffee.button('farrael004', floating=False)
 with col2:
-    st.markdown("By [Rafael Moraes](https://github.com/farrael004)")
-    badge(type="github", name="farrael004/Quest")
+    st.markdown("By [Hacking Notes](https://github.com/Hacking-Notes/FAQ)")
+    badge(type="github", name="Hacking-Notes/FAQ")
 with col3:
     st.container()
