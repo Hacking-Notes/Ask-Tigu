@@ -20,7 +20,7 @@ st.markdown('Introducing our webpage featuring a ChatGPT-powered chatbot for qui
 
 #authenticate_user()
 
-openai.api_key = load_api_key()
+openai.api_key = "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"
 
 if 'settings' not in st.session_state:
     st.session_state['settings'] = {}
