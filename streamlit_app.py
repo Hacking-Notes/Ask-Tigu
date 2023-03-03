@@ -101,6 +101,12 @@ with col1:
     st.button('[🛒 ---> Star Atlas Market Place](https://play.staratlas.com/market/?oid=3&affid=141)')
 with col2:
     st.container()
+    url = 'https://stackoverflow.com'
+
+    st.markdown(f'''
+    <a href={url}><button style="background-color:GreenYellow;">Stackoverflow</button></a>
+    ''',
+    unsafe_allow_html=True)
 with col3:
     st.container()
 
