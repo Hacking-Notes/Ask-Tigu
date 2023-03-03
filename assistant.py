@@ -99,10 +99,6 @@ def display_assistant_response(similar_google_results, prompt, answer):
     with st.expander("What sources did I use to make this answer?"):
         for row in similar_google_results.iterrows():
             st.write(markdown_litteral(row[1]['text']) + f" [Source]({row[1]['link']})") 
-    with st.expander("Prompt used:"):
-        st.write(markdown_litteral(prompt).replace('\n','  \n  \n'))
-        st.markdown(':green[Tokens used: ]' + f':green[{str(num_of_tokens(prompt))}]')
-   
 
 def assistant_settings(chat_submitted, col2):
     settings = {}
