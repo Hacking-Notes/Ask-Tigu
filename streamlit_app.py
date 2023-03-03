@@ -80,8 +80,6 @@ with chat:
         col1, col2 = st.columns(2)
         chat_submitted = col1.form_submit_button("Submit")
         settings = assistant_settings(chat_submitted, col2)
-    add_searches(settings)
-
 
 # User input is used here to process and display GPT's response
 with response:
