@@ -26,7 +26,7 @@ if 'settings' not in st.session_state:
     st.session_state['settings'] = {}
 
 # App layout
-tab1, tab2, tab3, tab4 = st.tabs(["Have a conversation"])
+tab1 = st.tabs(["Have a conversation"])
 
 # Have a conversation tab
 with tab1:
