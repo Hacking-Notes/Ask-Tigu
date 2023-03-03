@@ -98,15 +98,14 @@ add_vertical_space(2)
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.button('[🛒 ---> Star Atlas Market Place](https://play.staratlas.com/market/?oid=3&affid=141)')
-with col2:
-    st.container()
-    url = 'https://stackoverflow.com'
+        st.container()
+    url = 'https://play.staratlas.com/market/?oid=3&affid=141'
 
     st.markdown(f'''
-    <a href={url}><button style="background-color:GreenYellow;">Stackoverflow</button></a>
+    <a href={url}><button style="background-color:GreenYellow;">🛒 ---> Star Atlas Market Place</button></a>
     ''',
     unsafe_allow_html=True)
+with col2:
 with col3:
     st.container()
 
