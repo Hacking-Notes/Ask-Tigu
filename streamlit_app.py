@@ -12,6 +12,11 @@ from gpt_api import find_top_similar_results
 from auth import authenticate_user, logout_button
 from database import delete_user_button
 
+st.set_page_config(page_title='Star Atlas FAQ')
+st.title("Star Atlas FAQ")
+st.markdown('Introducing our webpage featuring a ChatGPT-powered chatbot for quick and accurate responses to FAQs.  \
+    With a user-friendly interface, simply type in your question and get an instant response. \
+        Our constantly-learning chatbot can handle multiple queries at once, ensuring the best experience for support. Try it out now!')
 
 #authenticate_user()
 
