@@ -221,6 +221,7 @@ def add_searches(settings):
 
 def get_info_from_internet(user_chat_text, settings):
     answer_with_search = settings['answer_with_search']
+    additional_searches = settings['additional_searches']
     specify_sources = settings['specify_sources'].split(', ')
     consult_search_history = settings['consult_search_history']
     num_of_excerpts = settings['num_of_excerpts']
