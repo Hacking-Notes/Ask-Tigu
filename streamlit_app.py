@@ -12,7 +12,7 @@ from gpt_api import find_top_similar_results
 from auth import authenticate_user, logout_button
 from database import delete_user_button
 
-st.set_page_config(page_title='Star Atlas FAQ', page_icon='https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://staratlas.help&size=16', theme='light')
+st.set_page_config(page_title="Star Atlas FAQ", page_icon="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://staratlas.help&size=16", theme="light")
 st.title("Star Atlas FAQ")
 st.markdown('Introducing our webpage featuring a ChatGPT-powered chatbot for quick and accurate responses to FAQs.  \
     With a user-friendly interface, simply type in your question and get an instant response. \
