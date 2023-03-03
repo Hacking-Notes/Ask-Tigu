@@ -12,12 +12,11 @@ from gpt_api import find_top_similar_results
 from auth import authenticate_user, logout_button
 from database import delete_user_button
 
-st.set_page_config(page_title='Quest🔍')
+st.set_page_config(page_title='Star Atlas FAQ')
 st.title("Quest🔍")
-st.markdown('Tired of sifting through search results to find the \
-    information you need? The Assistant can take care of it for you! \
-        This open source AI-powered personal assistant can access the internet, \
-            providing both quick and accurate answers to your questions.')
+st.markdown('Our webpage uses advanced AI technology to provide quick and accurate responses to FAQs through our ChatGPT-powered chatbot.  \
+    With a user-friendly interface, simply type in your question and get an instant response. \
+        Our constantly-learning chatbot can handle multiple queries at once, ensuring your customers receive timely support. Try it out now!')
 
 
 #authenticate_user()
