@@ -19,7 +19,7 @@ def api_key_form():
     with st.form('API Key'):
         api_key = st.text_input(label='Insert your API key here', type='password')
         api_submitted = st.form_submit_button("Submit")
-        save_api_key = st.checkbox('Remember my key.',disabled=True)
+        save_api_key = st.checkbox('Remember my key.',disabled=False)
 
     st.markdown("[Find your API key here](https://beta.openai.com/account/api-keys)")
     
