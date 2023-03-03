@@ -13,7 +13,7 @@ from auth import authenticate_user, logout_button
 from database import delete_user_button
 
 st.set_page_config(page_title='Star Atlas FAQ')
-st.title("Quest🔍")
+st.title("Star Atlas FAQ")
 st.markdown('Our webpage uses advanced AI technology to provide quick and accurate responses to FAQs through our ChatGPT-powered chatbot.  \
     With a user-friendly interface, simply type in your question and get an instant response. \
         Our constantly-learning chatbot can handle multiple queries at once, ensuring your customers receive timely support. Try it out now!')
