@@ -19,10 +19,6 @@ st.markdown('Tired of sifting through search results to find the \
         This open source AI-powered personal assistant can access the internet, \
             providing both quick and accurate answers to your questions.')
 
-# Create Sidebar
-with st.sidebar:
-    lottie_image1 = load_lottie_url('https://assets10.lottiefiles.com/packages/lf20_ofa3xwo7.json')
-    st_lottie(lottie_image1)
 
 #authenticate_user()
 
