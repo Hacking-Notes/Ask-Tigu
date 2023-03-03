@@ -68,3 +68,4 @@ with col3:
     st.container()
 
 st.markdown('<style>.css-1lsmgbg.egzxvld0 {display: none;}</style>', unsafe_allow_html=True)
+st.markdown('<style>.viewerBadge_container__1QSob {display: none;}</style>', unsafe_allow_html=True)
