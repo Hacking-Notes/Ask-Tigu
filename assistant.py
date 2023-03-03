@@ -50,7 +50,8 @@ def display_chat_history(starting_conversation):
         if i < len(starting_conversation): continue
         if text[:4] == 'User':
             text = '<img src="https://play.staratlas.com/_next/image/?url=https%3A%2F%2Fstorage.googleapis.com%2Fstar-atlas-assets%2Favatars%2FMUD_D.jpg&w=256&q=75" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;"> User: ' + text[:-13]
-            st.write(text, unsafe_allow_html=True)            
+            st.markdown(text, unsafe_allow_html=True)
+            
         else:
             text = '<img src="https://cdn.discordapp.com/avatars/851644449410121749/eb28cd7d5f9659b606bb4ec5ea20bb20.webp?size=80" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;"> Tigu: ' + markdown_litteral(text[:-13])
         st.write(text, unsafe_allow_html=True)
