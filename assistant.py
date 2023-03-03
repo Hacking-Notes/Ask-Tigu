@@ -94,7 +94,7 @@ def create_prompt(settings,
 
 def display_assistant_response(similar_google_results, prompt, answer):
     st.markdown('---')
-    st.write('<img src="https://cdn.discordapp.com/avatars/851644449410121749/eb28cd7d5f9659b606bb4ec5ea20bb20.webp?size=80" style="vertical-align:middle; margin-right:10px; width:20px;"> Tigu: ' + markdown_litteral(answer), unsafe_allow_html=True)
+    st.write('<img src="https://cdn.discordapp.com/avatars/851644449410121749/eb28cd7d5f9659b606bb4ec5ea20bb20.webp?size=80" style="vertical-align:middle; margin-right:10px; width:30px; border-radius:50%;> Tigu: ' + markdown_litteral(answer), unsafe_allow_html=True)
     with st.expander("What sources did I use to make this answer?"):
         for row in similar_google_results.iterrows():
             st.write(markdown_litteral(row[1]['text']) + f" [Source]({row[1]['link']})") 
