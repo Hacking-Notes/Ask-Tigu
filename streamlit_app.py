@@ -105,7 +105,6 @@ with col1:
 with col2:
     st.container()
 
-st.markdown('<style>.css-1lsmgbg.egzxvld0 {display: none;}</style>', unsafe_allow_html=True)
 st.markdown('<style>#tabs-bui3-tab-1 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
 st.markdown('<style>#tabs-bui3-tab-2 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
 st.markdown('<style>#tabs-bui3-tab-3 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
