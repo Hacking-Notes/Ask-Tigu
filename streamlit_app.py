@@ -109,9 +109,7 @@ st.markdown('<style>#tabs-bui3-tab-3 {visibility:hidden;display:none;}</style>',
 
 hide_st_style = """
             <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
+
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
