@@ -77,7 +77,7 @@ with search:
 # Section where user inputs directly to GPT
 with chat:
     with st.form('Chat'):
-        user_chat_text = st.text_area(label='Ask Tigu: ')
+        user_chat_text = st.text_area(label="Ask the Assistant")
         col1, col2 = st.columns(2)
         chat_submitted = col1.form_submit_button("Submit")
         settings = assistant_settings(chat_submitted, col2)
@@ -100,7 +100,7 @@ add_vertical_space(2)
 col1, col2 = st.columns(2)
 with col1:
     url = 'https://play.staratlas.com/market/?oid=3&affid=141'
-    st.markdown(f'<a href="{url}"><button style="padding: 7.5px 40px; border: 1px solid #404046; border-radius: 8px; background-color: #222129; font-family: compact,sans-serif; font-size: 14px; text-align: center; cursor: pointer; color: #ffffff;" colspan="2">🛒 ---> Star Atlas Market Place</button></a>', unsafe_allow_html=True)
+    st.markdown(f'<a href="{url}"><button style="padding: 7.5px 50px; border: 1px solid #404046; border-radius: 8px; background-color: #222129; font-family: compact,sans-serif; font-size: 14px; text-align: center; cursor: pointer; color: #ffffff;" colspan="2">🛒 ---> Star Atlas Market Place</button></a>', unsafe_allow_html=True)
 with col2:
     st.container()
 
