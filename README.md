@@ -1,1 +1,1 @@
-# Star Atlas FAQ
+# Star Atlas | Ask Tigu
