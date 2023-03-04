@@ -109,7 +109,6 @@ st.markdown('<style>.row-widget.stCheckbox{visibility:hidden;display:none;}</sty
 st.markdown('<style>#tabs-bui3-tab-1 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
 st.markdown('<style>#tabs-bui3-tab-2 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
 st.markdown('<style>#tabs-bui3-tab-3 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
-st.markdown('<style>.css-18ni7ap e8zbici2 {display: none;}</style>', unsafe_allow_html=True)
 
 hide_st_style = """
             <style>
