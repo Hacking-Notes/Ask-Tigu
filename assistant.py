@@ -52,7 +52,7 @@ def display_chat_history(starting_conversation):
             text = "User:" + text[173:-13]
             
         else:
-            text = '<img src="https://cdn.discordapp.com/avatars/851644449410121749/eb28cd7d5f9659b606bb4ec5ea20bb20.webp?size=80" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;"> Tigu: ' + markdown_litteral(text[:-13])
+            text = '<img src="https://cdn.discordapp.com/avatars/851644449410121749/eb28cd7d5f9659b606bb4ec5ea20bb20.webp?size=80" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;">' + markdown_litteral(text[:-13])
         st.write(text, unsafe_allow_html=True)
         st.markdown('---')
      
