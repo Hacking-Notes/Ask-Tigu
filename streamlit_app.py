@@ -77,7 +77,7 @@ with search:
 # Section where user inputs directly to GPT
 with chat:
     with st.form('Chat'):
-        user_chat_text = st.text_area(label='<img src="https://cdn.discordapp.com/avatars/851644449410121749/eb28cd7d5f9659b606bb4ec5ea20bb20.webp?size=80" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;"> Ask Tigu: ', unsafe_allow_html=True)
+        user_chat_text = st.text_area(label='Ask Tigu: ')
         col1, col2 = st.columns(2)
         chat_submitted = col1.form_submit_button("Submit")
         settings = assistant_settings(chat_submitted, col2)
