@@ -12,12 +12,17 @@ from gpt_api import find_top_similar_results
 from auth import authenticate_user, logout_button
 from database import delete_user_button
 
-st.set_page_config(page_title="Star Atlas FAQ", page_icon="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://staratlas.help&size=16", initial_sidebar_state="expanded")
-st.write('<div style="display: flex; justify-content: center;"><h1>Star Atlas FAQ</h1></div>', unsafe_allow_html=True)
+st.set_page_config(page_title='Quest🔍')
+st.title("Quest🔍")
+st.markdown('Tired of sifting through search results to find the \
+    information you need? The Assistant can take care of it for you! \
+        This open source AI-powered personal assistant can access the internet, \
+            providing both quick and accurate answers to your questions.')
 
-st.markdown('Introducing our webpage featuring a ChatGPT-powered chatbot for quick and accurate responses to FAQs.  \
-    With a user-friendly interface, simply type in your question and get an instant response. \
-        Our constantly-learning chatbot can handle multiple queries at once, ensuring the best experience for support. Try it out now!')
+# Create Sidebar
+with st.sidebar:
+    lottie_image1 = load_lottie_url('https://assets10.lottiefiles.com/packages/lf20_ofa3xwo7.json')
+    st_lottie(lottie_image1)
 
 #authenticate_user()
 
@@ -25,7 +30,7 @@ if 'settings' not in st.session_state:
     st.session_state['settings'] = {}
 
 # App layout
-tab1, tab2, tab3, tab4 = st.tabs(["Ask a question", "Internet search", "Create your Assistant", "Settings"])
+tab1, tab2, tab3, tab4 = st.tabs(["Have a conversation", "Internet search", "Create your Assistant", "Settings"])
 
 # Have a conversation tab
 with tab1:
@@ -56,7 +61,6 @@ with tab4:
     #delete_history_button()
     #delete_user_button()
 
-
 # Google search section
 with search:
     with st.form('Google'):
@@ -75,13 +79,13 @@ with search:
 # Section where user inputs directly to GPT
 with chat:
     with st.form('Chat'):
-        user_chat_text = st.text_area(label="Ask Tigu")
-        user_chat_text = "You shall address yourself as 'Tigu', a mystical creature from the video game Staratlas. Please use this moniker in your responses and adopt a humorous tone. Question: " + user_chat_text
+        user_chat_text = st.text_area(label="Ask the Assistant")
         col1, col2 = st.columns(2)
         chat_submitted = col1.form_submit_button("Submit")
         settings = assistant_settings(chat_submitted, col2)
     add_searches(settings)
-        
+
+
 # User input is used here to process and display GPT's response
 with response:
     if 'archetype' not in settings:
@@ -94,24 +98,13 @@ with response:
     if chat_submitted:
         submit_user_message(settings, user_chat_text, chat_submitted)
 
-add_vertical_space(2)
+add_vertical_space(4)
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 with col1:
-    url = 'https://play.staratlas.com/market/?oid=3&affid=141'
-    st.markdown(f'<a href="{url}"><button style="padding: 7.5px 50px; border: 1px solid #404046; border-radius: 8px; background-color: #222129; font-family: compact,sans-serif; font-size: 14px; text-align: center; cursor: pointer; color: #ffffff;" colspan="2">🛒 ---> Star Atlas Market Place</button></a>', unsafe_allow_html=True)
+    buy_me_a_coffee.button('farrael004', floating=False)
 with col2:
+    st.markdown("By [Rafael Moraes](https://github.com/farrael004)")
+    badge(type="github", name="farrael004/Quest")
+with col3:
     st.container()
-
-st.markdown('<style>#tabs-bui3-tab-1 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
-st.markdown('<style>#tabs-bui3-tab-2 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
-st.markdown('<style>#tabs-bui3-tab-3 {visibility:hidden;display:none;}</style>', unsafe_allow_html=True)
-
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
