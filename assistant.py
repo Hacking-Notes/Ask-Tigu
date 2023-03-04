@@ -124,7 +124,7 @@ def assistant_settings(chat_submitted, col2):
         settings['temperature'] = 0.5
 
         
-        settings['specify_sources'] = 'staratlas.help'
+        settings['specify_sources'] = 'https://staratlas.help'
         
         
         with col2.container():
