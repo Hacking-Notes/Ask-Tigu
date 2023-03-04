@@ -89,7 +89,7 @@ def page_search(search, search_depth, links):
     largest_results = largest_results.drop_duplicates()
 
     # Create embeddings
-    with st.spinner('Analysing results...'):
+    with st.spinner('Breaking down the space data...'):
         largest_results['ada_search'] = largest_results['text'].apply(lambda x: create_embedding(x))
     return largest_results
 
