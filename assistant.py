@@ -49,11 +49,10 @@ def display_chat_history(starting_conversation):
         chat_so_far += text + '\n'
         if i < len(starting_conversation): continue
         if text[:4] == 'User':
-            text = "User:" + text[173:-13]
-            
+            text = '👤' + text[:-13]
         else:
-            text = '<img src="https://cdn.discordapp.com/avatars/851644449410121749/eb28cd7d5f9659b606bb4ec5ea20bb20.webp?size=80" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;">' + markdown_litteral(text[:-13])
-        st.write(text, unsafe_allow_html=True)
+            text = '🖥️' + markdown_litteral(text[:-13])
+        st.write(text)
         st.markdown('---')
      
         
@@ -95,10 +94,15 @@ def create_prompt(settings,
 
 def display_assistant_response(similar_google_results, prompt, answer):
     st.markdown('---')
-    st.write('<img src="https://cdn.discordapp.com/avatars/851644449410121749/eb28cd7d5f9659b606bb4ec5ea20bb20.webp?size=80" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;"> Tigu: ' + markdown_litteral(answer), unsafe_allow_html=True)
+    st.write('🖥️Assistant: ' + markdown_litteral(answer))
     with st.expander("What sources did I use to make this answer?"):
         for row in similar_google_results.iterrows():
             st.write(markdown_litteral(row[1]['text']) + f" [Source]({row[1]['link']})") 
+    with st.expander("Prompt used:"):
+        st.write(markdown_litteral(prompt).replace('\n','  \n  \n'))
+        st.markdown(':green[Tokens used: ]' + f':green[{str(num_of_tokens(prompt))}]')
+   
+
 def assistant_settings(chat_submitted, col2):
     settings = {}
     if 'answer_with_search' not in st.session_state['settings']:
@@ -112,7 +116,12 @@ def assistant_settings(chat_submitted, col2):
     with st.expander("Assistant settings"):
         col1, col2 = st.columns(2)
         archetypes, default_setting_index = load_assistant_settings()
-        archetype = 'Strictly Factual'
+        archetype = col1.selectbox('Archetype',
+                                                archetypes.keys(),
+                                                help='Determines how the assistant will behave \
+                                                    (Custom archetypes can be created in the \
+                                                        "Create your Assistant" tab).',
+                                                index=default_setting_index)
             
         if 'num_of_excerpts' not in st.session_state['settings']:
             st.session_state['settings']['num_of_excerpts'] = 5
@@ -120,20 +129,32 @@ def assistant_settings(chat_submitted, col2):
             st.session_state['settings']['specify_sources'] = ''
             st.session_state['settings']['temperature'] = 1.0
                   
-        settings['temperature'] = 1.0
-
+        settings['temperature'] = col2.slider('Temperature',
+                                              min_value=0.0,max_value=1.0,value=1.0,step=0.01,
+                                              help="Determine how random the Assistant responses are \
+                                                  lower numbers mean more deterministic answers \
+                                                      higher values mean more random.") 
+        
         settings['specify_sources'] = st.text_input("Specify links",
                                                         help="This field allows you to specify urls \
                                                             for the Assistant to source from. \
                                                                 Separate each link with a comma \
                                                                     and space `, `.",
-                                                                    value='https://staratlas.com, https://medium.com/the-hologram, https://support.staratlas.com, https://staratlasgame.medium.com, https://staratlas.help/directory') 
+                                                                    value='') 
         with col2.container():
             add_vertical_space(1)
             
-        settings['consult_search_history'] = True
+        settings['consult_search_history'] = col2.checkbox('Consult search history',
+                                                             value=True,
+                                                             help="When checked, the Assistant will look into \
+                                                                 the search history to find relevant excerpts.")  
         
-        settings['num_of_excerpts'] = 5
+        settings['num_of_excerpts'] = col1.number_input('How many excerpts to use',
+                                                          min_value=1,
+                                                          value=5,
+                                                          help='This indicates how many \
+                                                              pieces of texts from searches \
+                                                                  to use in the prompt') 
         
     if chat_submitted:
         settings['archetype'] = archetypes[archetype]
@@ -147,11 +168,11 @@ def submit_user_message(settings, user_chat_text, chat_submitted):
     if not chat_submitted or user_chat_text == '': return
     
     # Show user message
-    st.write('<img src="https://play.staratlas.com/_next/image/?url=https%3A%2F%2Fstorage.googleapis.com%2Fstar-atlas-assets%2Favatars%2FMUD_D.jpg&w=256&q=75" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;"> User: ' + user_chat_text[168:], unsafe_allow_html=True)
-    
+    st.write('👤User: ' + user_chat_text)
+
     # Find relevant search results and conversation entries to craft the AI prompt
     similar_google_results = get_info_from_internet(user_chat_text, settings)
-    with st.spinner('Sending cosmic text...'):
+    with st.spinner('Sending message...'):
         similar_conversation = find_top_similar_results(st.session_state['conversation'],
                                                         user_chat_text, 4)
     
@@ -172,7 +193,7 @@ def submit_user_message(settings, user_chat_text, chat_submitted):
     tokens = num_of_tokens(prompt_text)
     
     # Send prompt to the AI and record it to chat history
-    with st.spinner("Tigu's neural circuits are firing up! ..."):
+    with st.spinner('Generating response...'):
         answer = gpt3_call(prompt_model,
                            tokens=4000 - tokens,
                            temperature=settings['temperature'],
@@ -180,7 +201,7 @@ def submit_user_message(settings, user_chat_text, chat_submitted):
         answer = remove_timestamp(answer)
     add_conversation_entry('User: ' + user_chat_text + f' ({current_time})')
     current_time = f'{date.strftime("%I:%M:%S %p")}'
-    add_conversation_entry('Tigu: ' + answer + f' ({current_time})')
+    add_conversation_entry('Assistant: ' + answer + f' ({current_time})')
     
     display_assistant_response(similar_google_results, prompt_text, answer)
 
