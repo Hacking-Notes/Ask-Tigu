@@ -113,7 +113,12 @@ def assistant_settings(chat_submitted, col2):
     with st.expander("Assistant settings"):
         col1, col2 = st.columns(2)
         archetypes, default_setting_index = load_assistant_settings()
-        archetype = 'Strictly Factual'
+        archetype = col1.selectbox('Archetype',
+                                                archetypes.keys(),
+                                                help='Determines how the assistant will behave \
+                                                    (Custom archetypes can be created in the \
+                                                        "Create your Assistant" tab).',
+                                                index=default_setting_index)
             
         if 'num_of_excerpts' not in st.session_state['settings']:
             st.session_state['settings']['num_of_excerpts'] = 5
@@ -121,8 +126,11 @@ def assistant_settings(chat_submitted, col2):
             st.session_state['settings']['specify_sources'] = ''
             st.session_state['settings']['temperature'] = 1.0
                   
-        settings['temperature'] = '0.5'
-
+        settings['temperature'] = col2.slider('Temperature',
+                                              min_value=0.0,max_value=1.0,value=1.0,step=0.01,
+                                              help="Determine how random the Assistant responses are \
+                                                  lower numbers mean more deterministic answers \
+                                                      higher values mean more random.") 
         
         settings['specify_sources'] = st.text_input("Specify links",
                                                         help="This field allows you to specify urls \
@@ -138,7 +146,12 @@ def assistant_settings(chat_submitted, col2):
                                                              help="When checked, the Assistant will look into \
                                                                  the search history to find relevant excerpts.")  
         
-        settings['num_of_excerpts'] = 5
+        settings['num_of_excerpts'] = col1.number_input('How many excerpts to use',
+                                                          min_value=1,
+                                                          value=5,
+                                                          help='This indicates how many \
+                                                              pieces of texts from searches \
+                                                                  to use in the prompt') 
         
     if chat_submitted:
         settings['archetype'] = archetypes[archetype]
