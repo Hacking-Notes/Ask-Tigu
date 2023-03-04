@@ -13,7 +13,12 @@ from auth import authenticate_user, logout_button
 from database import delete_user_button
 
 st.set_page_config(page_title="Star Atlas FAQ", page_icon="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://staratlas.help&size=16", initial_sidebar_state="expanded")
-st.title('<img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://staratlas.help&size=16" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;">Star Atlas FAQ', unsafe_allow_html=True)
+col1, col2 = st.columns(2)
+with col1:
+    st.title("Star Atlas FAQ")
+with col2:
+    st.title("Star Atlas FAQ")
+    
 st.markdown('<img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://staratlas.help&size=16" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;">', unsafe_allow_html=True)
 st.markdown('Introducing our webpage featuring a ChatGPT-powered chatbot for quick and accurate responses to FAQs.  \
     With a user-friendly interface, simply type in your question and get an instant response. \
