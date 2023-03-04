@@ -77,7 +77,7 @@ with search:
 # Section where user inputs directly to GPT
 with chat:
     with st.form('Chat'):
-        user_chat_text = st.text_area(label="Ask Tigu")
+        user_chat_text = "hello"
         col1, col2 = st.columns(2)
         chat_submitted = col1.form_submit_button("Submit")
         settings = assistant_settings(chat_submitted, col2)
