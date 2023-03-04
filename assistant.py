@@ -121,11 +121,8 @@ def assistant_settings(chat_submitted, col2):
             st.session_state['settings']['specify_sources'] = ''
             st.session_state['settings']['temperature'] = 1.0
                   
-        settings['temperature'] = col2.slider('Temperature',
-                                              min_value=0.0,max_value=1.0,value=1.0,step=0.01,
-                                              help="Determine how random the Assistant responses are \
-                                                  lower numbers mean more deterministic answers \
-                                                      higher values mean more random.") 
+        settings['temperature'] = '0.5'
+
         
         settings['specify_sources'] = st.text_input("Specify links",
                                                         help="This field allows you to specify urls \
