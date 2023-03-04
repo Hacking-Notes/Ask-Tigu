@@ -124,12 +124,9 @@ def assistant_settings(chat_submitted, col2):
         settings['temperature'] = 0.5
 
         
-        settings['specify_sources'] = st.text_input("Specify links",
-                                                        help="This field allows you to specify urls \
-                                                            for the Assistant to source from. \
-                                                                Separate each link with a comma \
-                                                                    and space `, `.",
-                                                                    value='') 
+        settings['specify_sources'] = 'staratlas.help'
+        
+        
         with col2.container():
             add_vertical_space(1)
             
