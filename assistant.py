@@ -48,8 +48,8 @@ def display_chat_history(starting_conversation):
     for i, text in enumerate(st.session_state['conversation']['text']):
         chat_so_far += text + '\n'
         if i < len(starting_conversation): continue
-        if text[:168] == 'User':
-            text = text[:-13]
+        if text[:4] == 'User':
+            text = text[:168]
             
         else:
             text = '<img src="https://cdn.discordapp.com/avatars/851644449410121749/eb28cd7d5f9659b606bb4ec5ea20bb20.webp?size=80" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;"> Tigu: ' + markdown_litteral(text[:-13])
