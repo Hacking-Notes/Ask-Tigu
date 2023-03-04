@@ -159,7 +159,7 @@ def submit_user_message(settings, user_chat_text, chat_submitted):
     if not chat_submitted or user_chat_text == '': return
     
     # Show user message
-    st.write('<img src="https://play.staratlas.com/_next/image/?url=https%3A%2F%2Fstorage.googleapis.com%2Fstar-atlas-assets%2Favatars%2FMUD_D.jpg&w=256&q=75" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;"> User: ' + user_chat_text[:100], unsafe_allow_html=True)
+    st.write('<img src="https://play.staratlas.com/_next/image/?url=https%3A%2F%2Fstorage.googleapis.com%2Fstar-atlas-assets%2Favatars%2FMUD_D.jpg&w=256&q=75" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;"> User: ' + user_chat_text[100:], unsafe_allow_html=True)
     
     # Find relevant search results and conversation entries to craft the AI prompt
     similar_google_results = get_info_from_internet(user_chat_text, settings)
