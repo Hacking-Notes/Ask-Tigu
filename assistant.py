@@ -160,7 +160,7 @@ def submit_user_message(settings, user_chat_text, chat_submitted):
     # Show user message
     st.write('<img src="https://play.staratlas.com/_next/image/?url=https%3A%2F%2Fstorage.googleapis.com%2Fstar-atlas-assets%2Favatars%2FMUD_D.jpg&w=256&q=75" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;"> User: ' + user_chat_text, unsafe_allow_html=True)
 
-    # Find relevant search results and conversation entries to craft the AI prompt
+        # Find relevant search results and conversation entries to craft the AI prompt
     similar_google_results = get_info_from_internet(user_chat_text, settings)
     with st.spinner('Sending message...'):
         similar_conversation = find_top_similar_results(st.session_state['conversation'],
@@ -183,7 +183,7 @@ def submit_user_message(settings, user_chat_text, chat_submitted):
     tokens = num_of_tokens(prompt_text)
     
     # Send prompt to the AI and record it to chat history
-    with st.spinner('Tigu is searching a response...'):
+    with st.spinner('Generating response...'):
         answer = gpt3_call(prompt_model,
                            tokens=4000 - tokens,
                            temperature=settings['temperature'],
