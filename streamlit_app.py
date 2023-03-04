@@ -19,7 +19,9 @@ st.markdown('Introducing our webpage featuring a ChatGPT-powered chatbot for qui
     With a user-friendly interface, simply type in your question and get an instant response. \
         Our constantly-learning chatbot can handle multiple queries at once, ensuring the best experience for support. Try it out now!')
 
-openai.api_key = st.secrets["openai.api_key"]
+
+
+openai.api_key = st.secrets["api_key"]
 
 #authenticate_user()
 
