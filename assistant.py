@@ -95,15 +95,10 @@ def create_prompt(settings,
 
 def display_assistant_response(similar_google_results, prompt, answer):
     st.markdown('---')
-    st.write('🖥️Assistant: ' + markdown_litteral(answer))
+    st.write('<img src="https://cdn.discordapp.com/avatars/851644449410121749/eb28cd7d5f9659b606bb4ec5ea20bb20.webp?size=80" style="vertical-align:middle; margin-right:5px; width:30px; border-radius:50%;"> Tigu: ' + markdown_litteral(answer), unsafe_allow_html=True)
     with st.expander("What sources did I use to make this answer?"):
         for row in similar_google_results.iterrows():
             st.write(markdown_litteral(row[1]['text']) + f" [Source]({row[1]['link']})") 
-    with st.expander("Prompt used:"):
-        st.write(markdown_litteral(prompt).replace('\n','  \n  \n'))
-        st.markdown(':green[Tokens used: ]' + f':green[{str(num_of_tokens(prompt))}]')
-   
-
 def assistant_settings(chat_submitted, col2):
     settings = {}
     if 'answer_with_search' not in st.session_state['settings']:
@@ -117,12 +112,7 @@ def assistant_settings(chat_submitted, col2):
     with st.expander("Assistant settings"):
         col1, col2 = st.columns(2)
         archetypes, default_setting_index = load_assistant_settings()
-        archetype = col1.selectbox('Archetype',
-                                                archetypes.keys(),
-                                                help='Determines how the assistant will behave \
-                                                    (Custom archetypes can be created in the \
-                                                        "Create your Assistant" tab).',
-                                                index=default_setting_index)
+        archetype = 'Strictly Factual'
             
         if 'num_of_excerpts' not in st.session_state['settings']:
             st.session_state['settings']['num_of_excerpts'] = 5
