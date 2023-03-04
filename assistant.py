@@ -121,7 +121,7 @@ def assistant_settings(chat_submitted, col2):
             st.session_state['settings']['specify_sources'] = ''
             st.session_state['settings']['temperature'] = 1.0
                   
-        settings['temperature'] = '0.5'
+        settings['temperature'] = 0.5
 
         
         settings['specify_sources'] = st.text_input("Specify links",
