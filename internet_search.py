@@ -56,7 +56,7 @@ def find_links_from_search(res):
         return list(set(links)) # Remove duplicates while maintaining the same order
 
 def page_search(search, search_depth, links):
-    with st.spinner(text="Searching the internet..."): 
+    with st.spinner(text="Tigu is on the hunt for information..."): 
         # Explore the links
         links_attempted = -1
         links_explored = 0
