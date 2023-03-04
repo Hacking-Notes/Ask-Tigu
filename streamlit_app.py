@@ -101,9 +101,7 @@ with col1:
     url = 'https://stackoverflow.com'
     st.markdown(f'<a href="{url}"><button style="background-color:GreenYellow;">🛒 ---> Star Atlas Market Place</button></a>', unsafe_allow_html=True)
 with col2:
-    
 with col3:
-    st.container()
 
 st.markdown('<style>.css-1lsmgbg.egzxvld0 {display: none;}</style>', unsafe_allow_html=True)
 st.markdown('<style>a.viewerBadge_container__1QSob {font-size: .001rem !important;}</style>', unsafe_allow_html=True)
