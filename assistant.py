@@ -131,10 +131,7 @@ def assistant_settings(chat_submitted, col2):
         with col2.container():
             add_vertical_space(1)
             
-        settings['consult_search_history'] = col2.checkbox('Consult search history',
-                                                             value=True,
-                                                             help="When checked, the Assistant will look into \
-                                                                 the search history to find relevant excerpts.")  
+        settings['consult_search_history'] = True
         
         settings['num_of_excerpts'] = 5
         
