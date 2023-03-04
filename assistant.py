@@ -184,7 +184,7 @@ def submit_user_message(settings, user_chat_text, chat_submitted):
     tokens = num_of_tokens(prompt_text)
     
     # Send prompt to the AI and record it to chat history
-    with st.spinner('Tigu is on the hunt for information...'):
+    with st.spinner("Tigu's neural circuits are firing up! ..."):
         answer = gpt3_call(prompt_model,
                            tokens=4000 - tokens,
                            temperature=settings['temperature'],
