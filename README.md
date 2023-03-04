@@ -1,1 +1,1 @@
-# FAQ
+# Star Atlas FAQ
