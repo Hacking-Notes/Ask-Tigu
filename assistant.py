@@ -121,14 +121,10 @@ def assistant_settings(chat_submitted, col2):
             st.session_state['settings']['specify_sources'] = ''
             st.session_state['settings']['temperature'] = 1.0
                   
-        settings['temperature'] = col2.slider('Temperature',
-                                              min_value=0.0,max_value=1.0,value=1.0,step=0.01,
-                                              help="Determine how random the Assistant responses are \
-                                                  lower numbers mean more deterministic answers \
-                                                      higher values mean more random.")
+        settings['temperature'] = 0.5
 
         
-        settings['specify_sources'] = 'https://staratlas.com, https://support.staratlas.com , https://staratlasgame.medium.com/, https://staratlas.club/, https://staratlas.help, https://aephia.com/'
+        settings['specify_sources'] = 'staratlas.help'
         
         
         with col2.container():
@@ -139,12 +135,7 @@ def assistant_settings(chat_submitted, col2):
                                                              help="When checked, the Assistant will look into \
                                                                  the search history to find relevant excerpts.")  
         
-        settings['num_of_excerpts'] = col1.number_input('How many excerpts to use',
-                                                          min_value=1,
-                                                          value=5,
-                                                          help='This indicates how many \
-                                                              pieces of texts from searches \
-                                                                  to use in the prompt') 
+        settings['num_of_excerpts'] = 5
         
     if chat_submitted:
         settings['archetype'] = archetypes[archetype]
