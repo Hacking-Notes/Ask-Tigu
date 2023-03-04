@@ -127,7 +127,7 @@ def assistant_settings(chat_submitted, col2):
                                                             for the Assistant to source from. \
                                                                 Separate each link with a comma \
                                                                     and space `, `.",
-                                                                    value='https://staratlas.com, https://medium.com/the-hologram, https://support.staratlas.com, https://staratlasgame.medium.com, https://staratlas.help') 
+                                                                    value='https://staratlas.com, https://medium.com/the-hologram, https://support.staratlas.com, https://staratlasgame.medium.com, https://staratlas.help/directory') 
         with col2.container():
             add_vertical_space(1)
             
