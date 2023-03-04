@@ -128,12 +128,7 @@ def assistant_settings(chat_submitted, col2):
                                                       higher values mean more random.")
 
         
-        settings['specify_sources'] = st.text_input("Specify links",
-                                                        help="This field allows you to specify urls \
-                                                            for the Assistant to source from. \
-                                                                Separate each link with a comma \
-                                                                    and space `, `.",
-                                                                    value='') 
+        settings['specify_sources'] = 'https://staratlas.com, https://support.staratlas.com , https://staratlasgame.medium.com/, https://staratlas.club/, https://staratlas.help, https://aephia.com/'
         
         
         with col2.container():
@@ -188,7 +183,7 @@ def submit_user_message(settings, user_chat_text, chat_submitted):
     tokens = num_of_tokens(prompt_text)
     
     # Send prompt to the AI and record it to chat history
-    with st.spinner('Tigu is searching a response...'):
+    with st.spinner('Generating response...'):
         answer = gpt3_call(prompt_model,
                            tokens=4000 - tokens,
                            temperature=settings['temperature'],
