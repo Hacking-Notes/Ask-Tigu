@@ -128,7 +128,8 @@ def assistant_settings(chat_submitted, col2):
                                                       higher values mean more random.")
 
         
-        settings['specify_sources'] = 'https://staratlas.com, https://support.staratlas.com , https://staratlasgame.medium.com/, https://staratlas.club/, https://staratlas.help, https://aephia.com/'
+        settings['specify_sources'] = ['https://staratlas.com', 'https://support.staratlas.com', 'https://staratlasgame.medium.com/', 'https://staratlas.club/', 'https://staratlas.help', 'https://aephia.com/']
+
         
         
         with col2.container():
