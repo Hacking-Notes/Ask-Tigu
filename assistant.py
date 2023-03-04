@@ -146,12 +146,7 @@ def assistant_settings(chat_submitted, col2):
                                                              help="When checked, the Assistant will look into \
                                                                  the search history to find relevant excerpts.")  
         
-        settings['num_of_excerpts'] = col1.number_input('How many excerpts to use',
-                                                          min_value=1,
-                                                          value=5,
-                                                          help='This indicates how many \
-                                                              pieces of texts from searches \
-                                                                  to use in the prompt') 
+        settings['num_of_excerpts'] = 5
         
     if chat_submitted:
         settings['archetype'] = archetypes[archetype]
