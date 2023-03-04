@@ -99,7 +99,7 @@ add_vertical_space(2)
 col1, col2, col3 = st.columns(3)
 with col1:
     url = 'https://play.staratlas.com/market/?oid=3&affid=141'
-    st.markdown(f'<a href="{url}"><button style="margin: 7.5px 400px; border: 1px solid #404046; border-radius: 8px; background-color: #222129; font-family: compact,sans-serif; font-size: 14px; text-align: center; cursor: pointer; color: #ffffff;">🛒 ---> Star Atlas Market Place</button></a>', unsafe_allow_html=True)
+    st.markdown(f'<a href="{url}"><button style="padding: 7.5px 60px; border: 1px solid #404046; border-radius: 8px; background-color: #222129; font-family: compact,sans-serif; font-size: 14px; text-align: center; cursor: pointer; color: #ffffff;">🛒 ---> Star Atlas Market Place</button></a>', unsafe_allow_html=True)
 with col2:
     st.container()
 with col3:
