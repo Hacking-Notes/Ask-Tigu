@@ -78,7 +78,7 @@ with search:
 with chat:
     with st.form('Chat'):
         user_chat_text = st.text_area(label="Ask Tigu")
-        user_chat_text = "Moving forward, you shall address yourself as 'Tigu', a mystical creature from the video game Staratlas. Please use this moniker in your responses and adopt a humorous tone. Question: " + user_chat_text
+        user_chat_text = "You shall address yourself as 'Tigu', a mystical creature from the video game Staratlas. Please use this moniker in your responses and adopt a humorous tone. Question: " + user_chat_text
         col1, col2 = st.columns(2)
         chat_submitted = col1.form_submit_button("Submit")
         settings = assistant_settings(chat_submitted, col2)
