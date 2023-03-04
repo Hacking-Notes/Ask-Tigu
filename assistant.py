@@ -163,7 +163,7 @@ def submit_user_message(settings, user_chat_text, chat_submitted):
     
     # Find relevant search results and conversation entries to craft the AI prompt
     similar_google_results = get_info_from_internet(user_chat_text, settings)
-    with st.spinner('Sending message...'):
+    with st.spinner('Sending cosmic text...'):
         similar_conversation = find_top_similar_results(st.session_state['conversation'],
                                                         user_chat_text, 4)
     
@@ -184,7 +184,7 @@ def submit_user_message(settings, user_chat_text, chat_submitted):
     tokens = num_of_tokens(prompt_text)
     
     # Send prompt to the AI and record it to chat history
-    with st.spinner('Generating response...'):
+    with st.spinner('Tigu is on the hunt for information...'):
         answer = gpt3_call(prompt_model,
                            tokens=4000 - tokens,
                            temperature=settings['temperature'],
