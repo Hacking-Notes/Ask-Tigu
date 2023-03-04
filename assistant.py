@@ -113,12 +113,7 @@ def assistant_settings(chat_submitted, col2):
     with st.expander("Assistant settings"):
         col1, col2 = st.columns(2)
         archetypes, default_setting_index = load_assistant_settings()
-        archetype = col1.selectbox('Archetype',
-                                                archetypes.keys(),
-                                                help='Determines how the assistant will behave \
-                                                    (Custom archetypes can be created in the \
-                                                        "Create your Assistant" tab).',
-                                                index=default_setting_index)
+        archetype = 'Strictly Factual'
             
         if 'num_of_excerpts' not in st.session_state['settings']:
             st.session_state['settings']['num_of_excerpts'] = 5
