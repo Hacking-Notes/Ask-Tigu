@@ -113,12 +113,7 @@ def assistant_settings(chat_submitted, col2):
     with st.expander("Assistant settings"):
         col1, col2 = st.columns(2)
         archetypes, default_setting_index = load_assistant_settings()
-        archetype = col1.selectbox('Archetype',
-                                                archetypes.keys(),
-                                                help='Determines how the assistant will behave \
-                                                    (Custom archetypes can be created in the \
-                                                        "Create your Assistant" tab).',
-                                                index=default_setting_index)
+        archetype = 'Strictly Factual'
             
         if 'num_of_excerpts' not in st.session_state['settings']:
             st.session_state['settings']['num_of_excerpts'] = 5
@@ -130,14 +125,12 @@ def assistant_settings(chat_submitted, col2):
                                               min_value=0.0,max_value=1.0,value=1.0,step=0.01,
                                               help="Determine how random the Assistant responses are \
                                                   lower numbers mean more deterministic answers \
-                                                      higher values mean more random.") 
+                                                      higher values mean more random.")
+
         
-        settings['specify_sources'] = st.text_input("Specify links",
-                                                        help="This field allows you to specify urls \
-                                                            for the Assistant to source from. \
-                                                                Separate each link with a comma \
-                                                                    and space `, `.",
-                                                                    value='') 
+        settings['specify_sources'] = 'https://staratlas.com, https://support.staratlas.com , https://staratlasgame.medium.com/, https://staratlas.club/, https://staratlas.help, https://aephia.com/'
+        
+        
         with col2.container():
             add_vertical_space(1)
             
@@ -190,7 +183,7 @@ def submit_user_message(settings, user_chat_text, chat_submitted):
     tokens = num_of_tokens(prompt_text)
     
     # Send prompt to the AI and record it to chat history
-    with st.spinner('Generating response...'):
+    with st.spinner('Tigu is searching a response...'):
         answer = gpt3_call(prompt_model,
                            tokens=4000 - tokens,
                            temperature=settings['temperature'],
