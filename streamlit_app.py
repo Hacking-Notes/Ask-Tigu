@@ -98,7 +98,6 @@ add_vertical_space(2)
 
 col1, col2, col3 = st.columns(3)
 with col1:
-        st.container()
     url = 'https://stackoverflow.com'
 
     st.markdown(f'''
@@ -106,6 +105,7 @@ with col1:
     ''',
     unsafe_allow_html=True)
 with col2:
+    
 with col3:
     st.container()
 
