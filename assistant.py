@@ -128,8 +128,12 @@ def assistant_settings(chat_submitted, col2):
                                                       higher values mean more random.")
 
         
-        settings['specify_sources'] = "https://staratlas.com, https://support.staratlas.com, https://staratlasgame.medium.com, https://staratlas.club, https://staratlas.help, https://aephia.com"
-
+        settings['specify_sources'] = st.text_input("Specify links",
+                                            help="This field allows you to specify URLs \
+                                                  for the Assistant to source from. \
+                                                  Separate each link with a comma \
+                                                  and space `, `.",
+                                            value='https://staratlas.com, https://support.staratlas.com, https://staratlasgame.medium.com/, https://staratlas.club/, https://staratlas.help, https://aephia.com/')
         
         with col2.container():
             add_vertical_space(1)
