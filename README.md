@@ -1,6 +1,6 @@
 <img src="https://user-images.githubusercontent.com/118412415/222979139-9b26288f-53b6-4e5a-9ef3-44683311ae9c.png" alt="cat" style="width: 150px; height: auto; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%;">
 
-# Star Atlas | Ask Tigu
+# Star Atlas | Ask Tigu (AI)
 
 
 Tigu is the ultimate Staratlas companion, equipped with the latest live web searching technology and powered by the ChatGPT Turbo 3.5 (API) that can give you detailed information on any topic you want. So, whether you're a newbie or an experienced player, Tigu is here to help.
